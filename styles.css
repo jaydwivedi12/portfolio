@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: cursive;
+}
+
+:root {
+    --bgOrange: #e84949;
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 0, auto;
+
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    top: 0;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 30px;
+    margin-left: 1.2rem;
+
+}
+
+.nav-items {
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+}
+
+.nav-items div {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-items div a {
+    color: black;
+}
+
+.nav-items div:hover {
+    transition: 1s;
+    font-weight: bold;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+.main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4.5rem 3rem;
+    padding: 5rem 5rem;
+    padding-bottom: 8rem;
+
+
+}
+.hero-section button{
+    margin: 1.5em 0 0 0;
+     width: 150px;
+    
+}
+
+.hero-section-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.hero-section-heading {
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+
+.role {
+    color: #4e45d5;
+    font-weight: 800;
+}
+
+.hero-section-sub-heading {
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.hero-section-description {
+    margin-top: 1 rem;
+    width: 70%;
+    font-size: large;
+    font-weight: 500;
+}
+
+.hero-section-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.absolute {
+    position: absolute;
+}
+
+.user-image{
+    height: 500px;
+    width: 500px;
+}
+.user-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.skillsContainer {
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px
+}
+
+.skills-header {
+    color: var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.lan {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 10px;
+    background: linear-gradient(45deg,#e6e6e6,#fff);
+    box-shadow: 11px -11px 22px #ededed,-11px 11px 22px #fff;
+    width: 170px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.lan:hover {
+    color: #2d76eb;
+    transition: all .2s ease-in-out
+}
+
+.lan img {
+    height: 45px;
+    width: 45px
+}
+
+.progressDiv {
+    text-align: center;
+    margin: 1.5rem;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 11px 11px 22px #e0e0e0,-11px -11px 22px #fff;
+    border-radius: 18px;
+    flex-wrap: wrap
+}
+
+
+.project-section {
+    background-color:white;
+    margin-top: 4rem;
+    overflow-x: hidden;
+
+}
+
+.project-header {
+    color: var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+
+.project-card {
+    width: 78%;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.project-card::after {
+    content: "";
+    color: #fff;
+    position: absolute;
+    background: #1f1f1f9a;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(1);
+}
+
+.project-card::before {
+    content: "";
+    color: #fff;
+    position: absolute;
+    background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-number {
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    display: none;
+}
+
+.project-card:hover {
+    .project-number {
+        display: block;
+    }
+
+}
+
+.project-number-right {
+    right: 10%;
+}
+
+.project-number-left {
+    left: 10%;
+}
+
+.project-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
+}
+
+.project-content-left {
+    left: 10%;
+
+}
+
+.project-content-right {
+    right: -10%;
+}
+
+.project-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 10px;
+}
+
+.project-skills {
+    width: 40px;
+}
+
+.project-heading {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.project-subheading {
+    width: 60%;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.margin-left {
+    margin-left: 20%;
+}
+
+.btn-grp {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+
+}
+
+.btn-pink {
+    outline: none;
+    background-color: var(--bgOrange);
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 7px 0 black;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn-pink::before {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    z-index: -1;
+    transform-origin: left;
+
+}
+
+.btn-pink:hover::before {
+    transition: left;
+    transition: all 0.5s;
+    transform: scaleX(1);
+}
+
+.btn-pink:hover {
+    color: #1f1f1f;
+    z-index: 1;
+    transition: left;
+    transition: all 0.4s;
+}
+
+.icon {
+    color: white;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.icon:hover {
+    color: var(--bgOrange);
+    transition: all 0.5s;
+}
+
+.project-card:hover {
+    .project-content {
+        transform: scale(1.1);
+    }
+
+}
+
+#project1 {
+    background-image: url(./images/donation.png);
+}
+
+#project2 {
+    background-image: url(./images/calculator.png);
+}
+
+#project3 {
+    background-image: url(./images/movieflix.png);
+}
+
+
+.contact-section{
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    padding: 5em;
+
+}
+.contact-heading h1{
+    color: var(--bgOrange);
+    font-size: 4em;
+}
+.contact-desc{
+    color: #717590;
+    font-size: 2em;
+}
+.form{
+    margin: 2% 10%;
+}
+.contact-section form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.contact-section form input,textarea{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.2% 0%;
+    padding: 0.5em;
+    border: none;
+    box-shadow: 2px 2px 10px black;
+    font-size: 18px;
+    border-radius: 1em;
+}
+.submit-btn{
+    box-shadow: none;
+    padding: 5px 40px;
+    transition: all 0.3s;
+}
+.submit-btn:hover:hover{
+border-color: var(--bgOrange);
+scale: 0.9;
+}
+
+.footer
+{
+    text-align: center;
+    background-color: #343d68;
+}
+.footer a{
+    color: white;
+    font-size: 50px;
+}
+
+
+
+@media (max-width:850px) {
+     
+    .navbar{
+        display: none;
+
+    }
+    .hero-section {
+        padding: 50% 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        width: 100vw;
+        height: 100vh;
+        
+    }
+    .hero-section-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+  
+    .hero-section button{
+        margin: 0;
+        width: 150px;
+        
+    }
+    .hero-section-description{
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .user-image img {
+        height: 100%;
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .project-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .margin-left {
+        margin-left: 0;
+    }
+
+   
+
+    .project-content-left,
+    .project-content-right,
+    .project-number-right,
+    .project-number-left {
+        left: 0;
+        right: 0;
+    }
+
+    .project-card:hover {
+        .project-number {
+            display: none;
+        }
+    }
+
+
+    .hero-section-description {
+        margin: 12%;
+    }
+
+
+}
+
+
