@@ -401,7 +401,7 @@ a {
 }
 
 #project1 {
-    background-image: url(./images/donation.png);
+    background-image: url(./images/tastebite.png);
 }
 
 #project2 {
@@ -410,6 +410,10 @@ a {
 
 #project3 {
     background-image: url(./images/movieflix.png);
+}
+
+#project4 {
+    background-image: url(./images/donation.png);
 }
 
 
